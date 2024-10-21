@@ -4,8 +4,8 @@
   sponsorOnly: true
 
 - type: sponsorLoadout
-  id: WeaponDragonFoxBolter
-  entity: WeaponDragonFoxBolter
+  id: DragonFoxJetpackVoidFilled
+  entity: JetpackVoidFilled
   sponsorOnly: true
 
 # Backpack
@@ -26,33 +26,34 @@
     contents:
       - id: ClothingBeltDragonFoxFilled
       - id: ClothingNeckCloakDragonFox
-      - id: ClothingHandsGlovesDragonFox
+      - id: ClothingEyesHudMedicalDragonFox
+      - id: ClothingMaskDragonFox
+      - id: ClothingHandsGlovesCaptain
+      - id: ClothingOuterHardsuitDragonFox
+      - id: ClothingUniformJumpsuitDragonFox
       - id: ClothingHeadHatDragonFox
       - id: ClothingShoesBootsMagDragonFox
       - id: ClothingUnderSocksDragonFox
-      - id: JetpackVoidFilled
       - id: DominatorMedkitAdvanced
       - id: ADTtelescopicBaton
       - id: ToySword
-      - id: SpaceCash1000
       - id: WeaponDisablerToySponsor
       - id: ADTSpaceMarinne
-      - id: WeaponDragonFoxBolter
-      - id: СhainswordDragonFox
+      - id: ChainswordDragonFox
       - id: PaperLawdragon_fox
 
 # Belt
 - type: entity
   parent: ClothingBeltChiefEngineer
   id: ClothingBeltDragonFoxFilled
-  name: зелёный украшенный пояс
-  description: Пояс окрашенный в зелёный цвет.
+  name: золотой украшенный РПС
+  description: РПС окрашенный в золотой цвет.
   noSpawn: true
   components:
   - type: Sprite
-    sprite: DeadSpace/Sponsor/vjlados/belt.rsi
+    sprite: DeadSpace/Sponsor/DragonFox/belt.rsi
   - type: Clothing
-    sprite: DeadSpace/Sponsor/vjlados/belt.rsi
+    sprite: DeadSpace/Sponsor/DragonFox/belt.rsi
   - type: Item
     size: Huge
   - type: StorageFill
@@ -61,6 +62,66 @@
       - id: JawsOfLife
       - id: WelderExperimental
       - id: Multitool
+
+# Jumpsuit
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDragonFox
+  name: чёрный нано-костюм
+  description: Черный нано-костюм, выполненый из очень дорогих тканей.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/jumpsuit.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/jumpsuit.rsi
+
+# Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitAtmos
+  id: ClothingOuterHardsuitDragonFox
+  name: королевский украшенный скафандр
+  description: Принадлежат члену экипажа, находящемуся под покровительством спонсорской организации. Характеристики идентичны скафандру атмос-техника.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/suit.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/suit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitVjlados
+  - type: Item
+    size: Huge
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitDragonFox
+  noSpawn: true
+  name: королевский шлем
+  description: Шлем изолирующий владельца от страшного вакуума снаружи.
+  components:
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/helmet_suit.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/helmet_suit.rsi
+  - type: PointLight
+    color: "#daffad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+
+# Mask
+- type: entity
+  parent: ClothingMaskGasSyndicate
+  id: ClothingMaskDragonFox
+  name: золотой противогаз
+  description: Изготовлен на заказ, хорошо защищает владельца от вредных паров.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/gas.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/gas.rsi
 
 # Cloak
 - type: entity
@@ -73,21 +134,21 @@
   - type: Sprite
     sprite: DeadSpace/Sponsor/vjlados/cloak.rsi
 
-# Gloves
+# Eyes
 - type: entity
-  parent: ClothingHandsGlovesCombat
-  id: ClothingHandsGlovesDragonFox
-  name: белые боевые перчатки
-  description: Принадлежат члену экипажа, находящемуся под покровительством спонсорской организации. Изолированны.
+  parent: ClothingEyesHudMultiversal
+  id: ClothingEyesHudMedicalDragonFox
+  name: золотой визор
+  description: Изготовленый на заказ золотой визор, его владелец влиятельный человек.
   noSpawn: true
   components:
   - type: Sprite
-    sprite: DeadSpace/Sponsor/vjlados/gloves.rsi
+    sprite: DeadSpace/Sponsor/DragonFox/hud.rsi
   - type: Clothing
-    sprite: DeadSpace/Sponsor/vjlados/gloves.rsi
-  - type: Fiber
-    fiberMaterial: fibers-insulative
-    fiberColor: fibers-white
+    sprite: DeadSpace/Sponsor/DragonFox/hud.rsi
+  - type: EyeProtection
+  - type: IdentityBlocker
+    coverage: EYES
 
 # Head
 - type: entity
@@ -262,3 +323,50 @@
   components:
   - type: Sprite
     sprite: DeadSpace/Sponsor/DragonFox/backpack.rsi
+
+#Сестра битв
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitDragonFox
+  name: скафандр Адепта Сороритас
+  description: Скафандр Адепта Сороритас является не только средством защиты, но и символом веры и преданности Сестёр своему делу преданность и готовность защищать Империум от любых угроз.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.4
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/SisterOfBattle/hardsuit.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/SisterOfBattle/hardsuit.rsi
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
+  - type: Item
+    size: Huge
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitDragonFox
+  name: шлем Адепта Сороритас
+  description: Шлем оснащён системами фильтрации которые обеспечивают сёстрам чистый воздух. Дизайн шлема отражает его функциональность и эстетику, сочетая в себе элементы футуризма и религиозного символизма.
+  components:
+  - type: Sprite
+    sprite: DeadSpace/Sponsor/DragonFox/SisterOfBattle/head.rsi
+  - type: Clothing
+    sprite: DeadSpace/Sponsor/DragonFox/SisterOfBattle/head.rsi
+  - type: PointLight
+    color: "#ff1929"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
